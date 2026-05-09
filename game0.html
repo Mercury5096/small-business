@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    #popWindow {
+        width: 100%;
+        height: 95%;
+        z-index: 20;
+    }
+
+    #start-game {
+        position: absolute;
+        left: 38%;
+        top: 45%;
+        width: 25%;
+        float: left;
+        font-size: 24px;
+        text-align: center;
+        z-index: 30;
+    }
+
+    .banner {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        left: 0%;
+        top: 0%;
+        position: fixed;
+
+    }
+
+    .bg {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -999;
+    }
+</style>
+
+<body>
+
+    <div class="banner">
+        <img class="bg" src="images/game/遊戲開始.png" alt="">
+
+        <div id="popWindow">
+            <a href="game.html">
+                <button id="start-game">開始遊戲！</button>
+                </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

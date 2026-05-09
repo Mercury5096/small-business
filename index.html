@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 1000px;
+            margin: auto;
+            position: relative;
+
+        }
+
+        .bg {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -999;
+        }
+
+        .menu-box {
+            width: 97%;
+            top: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: flex-end;
+
+        }
+
+        .logo {
+            width: 25%;
+            left: 50px;
+            align-items: center;
+            position: absolute;
+
+        }
+
+        .logo img {
+            width: 80%;
+            top: 0;
+            left: 0%;
+            position: absolute;
+            z-index: -888;
+        }
+
+        .menu-bar {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-bar img {
+            width: 80%;
+        }
+
+        .menu-barb {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-barb img {
+            width: 70%;
+        }
+
+        .button1 {
+            width: 230px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            left: 95%;
+            top: 200px;
+            z-index: 10;
+            transform: translate(0px, 0px);
+        }
+
+        .button1:hover {
+            transform: translate(-120px, 0px);
+            transition: all 0.5s linear;
+        }
+
+        .button-img1 {
+            width: 90%;
+        }
+
+        .button1 #k1 {
+            background: url("images/Sbt/SBT-01.png");
+            position: absolute;
+            top: 140px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k1 img {
+            width: 100%;
+        }
+
+        .button1 #k1:hover {
+            background: url("images/Sbt/SBT-01-h.png");
+        }
+
+        .button1 #k2 {
+            background: url("images/Sbt/SBT-10.png");
+            position: absolute;
+            top: 180px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k2 img {
+            width: 100%;
+        }
+
+        .button1 #k2:hover {
+            background: url("images/Sbt/SBT-10-h.png");
+        }
+
+        .button1 #k3 {
+            background: url("images/Sbt/SBT-05.png");
+            position: absolute;
+            top: 225px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k3 img {
+            width: 100%
+        }
+
+        .button1 #k3:hover {
+            background: url("images/Sbt/SBT-05-h.png");
+        }
+
+        .button1 #k5 {
+            background: url("images/Sbt/SBT-06.png");
+            position: absolute;
+            top: 265px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k5 img {
+            width: 100%
+        }
+
+        .button1 #k5:hover {
+            background: url("images/Sbt/SBT-06-h.png");
+        }
+
+        .button1 #k6 {
+            background: url("images/Sbt/SBT-02.png");
+            position: absolute;
+            top: 305px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k6 img {
+            width: 100%
+        }
+
+        .button1 #k6:hover {
+            background: url("images/Sbt/SBT-02-h.png");
+        }
+
+        .button1 #k7 {
+            background: url("images/Sbt/SBT-03.png");
+            position: absolute;
+            top: 348px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k7 img {
+            width: 100%
+        }
+
+        .button1 #k7:hover {
+            background: url("images/Sbt/SBT-03-h.png");
+        }
+
+        .button1 #k8 {
+            background: url("images/Sbt/SBT-04.png");
+            position: absolute;
+            top: 390px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k8 img {
+            width: 100%
+        }
+
+        .button1 #k8:hover {
+            background: url("images/Sbt/SBT-04-h.png");
+        }
+
+        .button1 #k9 {
+            background: url("images/Sbt/SBT-09.png");
+            position: absolute;
+            top: 430px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k9 img {
+            width: 100%
+        }
+
+        .button1 #k9:hover {
+            background: url("images/Sbt/SBT-09-h.png");
+        }
+
+        .button1 #k10 {
+            background: url("images/Sbt/SBT-07.png");
+            position: absolute;
+            top: 470px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+
+        }
+
+        .button1 #k10 img {
+            width: 100%;
+        }
+
+        .button1 #k10:hover {
+            background: url("images/Sbt/SBT-07-h.png");
+        }
+
+
+        .wave {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 200px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave1 {
+            width: 150px;
+            height: 100px;
+            left: 5%;
+            top: 300px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .waveA {
+            width: 150px;
+            height: 100px;
+            left: 20%;
+            top: 450px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .waveB {
+            width: 150px;
+            height: 100px;
+            left: 62%;
+            top: 1000px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave2 {
+            width: 150px;
+            height: 100px;
+            left: 50%;
+            top: 2750px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave3 {
+            width: 150px;
+            height: 100px;
+            left: 80%;
+            top: 2650px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave4 {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 2700px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+        .wave5 {
+            width: 150px;
+            height: 100px;
+            left: 30%;
+            top: 2650px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave6 {
+            width: 150px;
+            height: 80px;
+            left: 3%;
+            top: 2800px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave7 {
+            width: 150px;
+            height: 100px;
+            left: 85%;
+            top: 2750px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave8 {
+            width: 150px;
+            height: 100px;
+            left: 55%;
+            top: 2600px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .jq-goTop {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 95%;
+            top: 100px;
+            z-index: 10;
+
+        }
+
+
+        .jq-goTop-img {
+            width: 100%;
+        }
+
+        #audio-01 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 96.5%;
+            top: 30px;
+            z-index: 10;
+
+        }
+
+        #audio-01-img {
+            width: 100%;
+        }
+
+
+        .tb1 {
+            width: 15%;
+            top: 1100px;
+            left: 50px;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .tb2 {
+            width: 15%;
+            top: 60%;
+            left: 30%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .tb3 {
+            width: 15%;
+            top: 105%;
+            left: 45%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .tb4 {
+            width: 15%;
+            top: 210%;
+            left: 50%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        /*空物件*/
+
+        #box1 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 350px;
+        }
+
+
+        #box2 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 600px;
+        }
+
+        #box3 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1000px;
+        }
+
+        #box4 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1200px;
+        }
+
+        #box5 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1500px;
+        }
+
+        #box6 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1950px;
+        }
+
+        /*空物件*/
+
+        .booth1 {
+            width: 25%;
+            top: 65%;
+            left: 45%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .booth-img1 {
+            width: 90%;
+
+        }
+
+        .booth2 {
+            width: 25%;
+            top: 100%;
+            left: 20%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img2 {
+            width: 90%;
+
+        }
+
+        .booth3 {
+            width: 23%;
+            top: 165%;
+            left: 650px;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img3 {
+            width: 90%;
+
+        }
+
+        .booth4 {
+            width: 30%;
+            top: 180%;
+            left: 50px;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img4 {
+            width: 90%;
+
+        }
+
+
+        .booth5 {
+            width: 20%;
+            top: 235%;
+            left: 500px;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img5 {
+            width: 90%;
+
+        }
+
+        .booth6 {
+            width: 25%;
+            top: 90%;
+            left: 66%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img6 {
+            width: 75%;
+
+        }
+
+        .booth7 {
+            width: 30%;
+            top: 190%;
+            left: 58%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+
+        }
+
+        .booth-img7 {
+            width: 90%;
+
+        }
+
+        .booth8 {
+            width: 25%;
+            top: 280%;
+            left: 70%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img8 {
+            width: 88%;
+
+        }
+
+
+        .booth9 {
+            width: 25%;
+            top: 280%;
+            left: 32%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img9 {
+            width: 100%;
+
+        }
+
+        .booth10 {
+            width: 25%;
+            top: 190%;
+            left: 5%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+
+        }
+
+        .booth-img10 {
+            width: 90%;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <div class="button1">
+        <img class="button-img1" src="images/side buttonBG.png" alt="">
+
+        <a href="#box1">
+            <div id="k1"><img src="" alt=""></div>
+        </a>
+        <a href="#box2">
+            <div id="k2"><img src="" alt=""></div>
+        </a>
+        <a href="#box3">
+            <div id="k3"><img src="" alt=""></div>
+        </a>
+        <a href="#box5">
+            <div id="k5"><img src="" alt=""></div>
+        </a>
+        <a href="#box1">
+            <div id="k6"><img src="" alt=""></div>
+        </a>
+        <a href="#box4">
+            <div id="k7"><img src="" alt=""></div>
+        </a>
+        <a href="#booth8">
+            <div id="k8"><img src="" alt=""></div>
+        </a>
+        <a href="#box6">
+            <div id="k9"><img src="" alt=""></div>
+        </a>
+        <a href="#box5">
+            <div id="k10"><img src="" alt=""></div>
+        </a>
+
+    </div>
+
+    <a id="audio-01"><img src="images/聲音按鈕-01.png" style=" width: 50%;" id="music_btn"></a>
+    <audio id="music" src="sound/Index_Music091622.mp3" loop></audio>
+
+    <div class="jq-goTop">
+        <img class="jq-goTop-img" src="images/side button2.png" alt="">
+    </div>
+
+    <div class="wave">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave1">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave2">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave3">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave4">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave5">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 30%;">
+    </div>
+
+    <div class="wave6">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave7">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave8">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="waveA">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="waveB">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <!--空物件-->
+
+    <div id="box1">
+    </div>
+
+    <div id="box2">
+    </div>
+
+    <div id="box3">
+    </div>
+
+    <div id="box4">
+    </div>
+
+    <div id="box5">
+    </div>
+
+    <div id="box6">
+    </div>
+
+    <!--空物件-->
+
+    <div class="tb1">
+        <a href="game0.html" target="_blank"> <img src="images/圖標-遊戲.png" width="100%" alt=""></a>
+
+    </div>
+
+    <div class="tb2">
+        <a href="qiyuan.html" target="_blank"> <img src="images/圖標-起源.png" width="100%" alt=""></a>
+
+    </div>
+
+    <div class="tb3">
+        <a href="jietou.html" target="_blank"> <img src="images/圖標-採訪.png" width="100%" alt=""></a>
+
+    </div>
+
+    <div class="tb4">
+        <a href="aboutus.html" target="_blank"> <img src="images/圖標-我們.png" width="100%" alt=""></a>
+
+    </div>
+
+
+
+
+    <div class="booth1">
+        <a name="booth1">
+            <img class="booth-img1" src="images/沙威馬.png">
+            <audio id="s1" src="sound/mp3/沙威瑪s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth2">
+        <a name="booth2">
+            <img class="booth-img2" src="images/牛奶麻薯.png">
+            <audio id="s2" src="sound/mp3/牛奶麻薯s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth3">
+        <a name="booth3">
+            <img class="booth-img3" src="images/修眉挽臉.png">
+            <audio id="s3" src="sound/mp3/修眉s.mp3"></audio></a>
+
+    </div>
+
+    <!--
+    <div class="booth4">
+        <a name="booth4">
+            <img class="booth-img4" src="images/紗窗玻璃.png">
+            <audio id="s10" src="sound/mp3/紗窗玻璃s.mp3"></audio></a>
+
+    </div>
+
+    -->
+
+    <div class="booth5">
+        <a name="booth5">
+            <img class="booth-img5" src="images/燒肉粽.png">
+            <audio id="s4" src="sound/mp3/燒肉粽s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth6">
+        <a name="booth6">
+            <img class="booth-img6" src="images/麥芽糖.png">
+            <audio id="s5" src="sound/mp3/麥芽糖s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth7">
+        <a name="booth7">
+            <img class="booth-img7" src="images/豬肉攤.png">
+            <audio id="s6" src="sound/mp3/豬肉攤s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth8">
+        <a name="booth8">
+            <img class="booth-img8" src="images/雞蛋糕.png">
+            <audio id="s7" src="sound/mp3/雞蛋糕s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth9">
+        <a name="booth9">
+            <img class="booth-img9" src="images/麵包車.png">
+            <audio id="s8" src="sound/mp3/麵包車s.mp3"></audio></a>
+
+    </div>
+
+    <div class="booth10">
+        <a name="booth10">
+            <img class="booth-img10" src="images/遊戲攤.png">
+            <audio id="s9" src="sound/mp3/遊戲s.mp3"></audio></a>
+
+    </div>
+
+
+    <div class="banner">
+        <img class="bg" src="images/首頁.jpg" alt="">
+
+        <div class="menu-box">
+            <div class="menu-barb"> <a href="#"> <img src="images/首頁.png" alt=""></a></div>
+            <div class="menu-barb"><a href="qiyuan.html" target="_blank"> <img src="images/起源.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="jietou.html" target="_blank"> <img src="images/街頭.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="aboutus.html" target="_blank"> <img src="images/關於我們.png" alt=""></a></div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(".jq-goTop").click(function (e) {
+            e.preventDefault();
+            $("html,body").animate(
+                {
+                    scrollTop: 0,
+                },
+                600
+            );
+        });
+
+        $("#audio-01").click(function () {
+            var music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+                $("#music_btn").attr("src", "images/聲音按鈕-02.png");
+            } else {
+                music.pause();
+                $("#music_btn").attr("src", "images/聲音按鈕-01.png");
+            }
+        });
+
+
+
+        $(function () {
+            $(".booth1").hover(function () {
+                $(".booth-img1").attr("src", "images/沙威馬an.png");
+                $("#s1")[0].play();
+                $(".booth1").click(function () {
+                    location.href = "booth.html#box1";
+
+                });
+            });
+
+
+            $(".booth1").mouseleave(function () {
+                $(".booth-img1").attr("src", "images/沙威馬.png");
+                $("#s1")[0].pause();
+                $("#s1")[0].currentTime = 0;
+            });
+
+
+        });
+
+        $(function () {
+            $(".booth2").hover(function () {
+                $(".booth-img2").attr("src", "images/牛奶麻薯an.png");
+                $("#s2")[0].play();
+                $(".booth2").click(function () {
+                    location.href = "booth.html#box2";
+
+                });
+            });
+
+
+            $(".booth2").mouseleave(function () {
+                $(".booth-img2").attr("src", "images/牛奶麻薯.png");
+                $("#s2")[0].pause();
+                $("#s2")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        $(function () {
+            $(".booth3").hover(function () {
+                $(".booth-img3").attr("src", "images/修眉挽臉an.png");
+                $("#s3")[0].play();
+                $(".booth3").click(function () {
+                    location.href = "booth.html#box8";
+
+                });
+            });
+
+
+            $(".booth3").mouseleave(function () {
+                $(".booth-img3").attr("src", "images/修眉挽臉.png");
+                $("#s3")[0].pause();
+                $("#s3")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        $(function () {
+            $(".booth4").hover(function () {
+                $(".booth-img4").attr("src", "images/紗窗玻璃an.png");
+                $("#s10")[0].play();
+                $(".booth4").click(function () {
+                    location.href = "booth.html#box7";
+
+                });
+            });
+
+
+            $(".booth4").mouseleave(function () {
+                $(".booth-img4").attr("src", "images/紗窗玻璃.png");
+                $("#s10")[0].pause();
+                $("#s10")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        $(function () {
+            $(".booth5").hover(function () {
+                $(".booth-img5").attr("src", "images/燒肉粽an.png");
+                $("#s4")[0].play();
+                $(".booth5").click(function () {
+                    location.href = "booth.html#box5";
+
+                });
+            });
+
+
+            $(".booth5").mouseleave(function () {
+                $(".booth-img5").attr("src", "images/燒肉粽.png");
+                $("#s4")[0].pause();
+                $("#s4")[0].currentTime = 0;
+            });
+
+
+        });
+
+        $(function () {
+            $(".booth6").hover(function () {
+                $(".booth-img6").attr("src", "images/麥芽糖an.png");
+                $("#s5")[0].play();
+                $(".booth6").click(function () {
+                    location.href = "booth.html#box4";
+
+                });
+            });
+
+
+            $(".booth6").mouseleave(function () {
+                $(".booth-img6").attr("src", "images/麥芽糖.png");
+                $("#s5")[0].pause();
+                $("#s5")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        $(function () {
+            $(".booth7").hover(function () {
+                $(".booth-img7").attr("src", "images/豬肉攤an.png");
+                $("#s6")[0].play();
+                $(".booth7").click(function () {
+                    location.href = "booth.html#box6";
+
+                });
+            });
+
+
+            $(".booth7").mouseleave(function () {
+                $(".booth-img7").attr("src", "images/豬肉攤.png");
+                $("#s6")[0].pause();
+                $("#s6")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        $(function () {
+            $(".booth8").hover(function () {
+                $(".booth-img8").attr("src", "images/雞蛋糕an.png");
+                $("#s7")[0].play();
+                $(".booth8").click(function () {
+                    location.href = "booth.html#box3";
+
+                });
+            });
+
+
+            $(".booth8").mouseleave(function () {
+                $(".booth-img8").attr("src", "images/雞蛋糕.png");
+                $("#s7")[0].pause();
+                $("#s7")[0].currentTime = 0;
+            });
+
+
+        });
+
+        $(function () {
+            $(".booth9").hover(function () {
+                $(".booth-img9").attr("src", "images/麵包車an.png");
+                $("#s8")[0].play();
+                $(".booth9").click(function () {
+                    location.href = "booth.html#box6";
+
+                });
+            });
+
+
+            $(".booth9").mouseleave(function () {
+                $(".booth-img9").attr("src", "images/麵包車.png");
+                $("#s8")[0].pause();
+                $("#s8")[0].currentTime = 0;
+            });
+
+
+        });
+
+        $(function () {
+            $(".booth10").hover(function () {
+                $(".booth-img10").attr("src", "images/遊戲攤an.png");
+                $("#s9")[0].play();
+                $(".booth10").click(function () {
+                    location.href = "booth.html#box6";
+
+                });
+            });
+
+
+            $(".booth10").mouseleave(function () {
+                $(".booth-img10").attr("src", "images/遊戲攤.png");
+                $("#s9")[0].pause();
+                $("#s9")[0].currentTime = 0;
+            });
+
+
+        });
+
+
+        (function () {
+            var boothSounds = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10"];
+            var unlocked = false;
+
+            function audioById(id) {
+                return document.getElementById(id);
+            }
+
+            function safelyPlay(audio) {
+                if (!audio) return;
+                var playRequest = audio.play();
+                if (playRequest && typeof playRequest.catch === "function") {
+                    playRequest.catch(function () {});
+                }
+            }
+
+            function unlockBoothSounds() {
+                if (unlocked) return;
+                unlocked = true;
+
+                boothSounds.forEach(function (id) {
+                    var audio = audioById(id);
+                    if (!audio) return;
+
+                    audio.muted = true;
+                    var playRequest = audio.play();
+                    if (playRequest && typeof playRequest.then === "function") {
+                        playRequest.then(function () {
+                            audio.pause();
+                            audio.currentTime = 0;
+                            audio.muted = false;
+                        }).catch(function () {
+                            audio.muted = false;
+                        });
+                    } else {
+                        audio.pause();
+                        audio.currentTime = 0;
+                        audio.muted = false;
+                    }
+                });
+            }
+
+            document.addEventListener("click", unlockBoothSounds, { once: true });
+            document.addEventListener("keydown", unlockBoothSounds, { once: true });
+            document.addEventListener("touchstart", unlockBoothSounds, { once: true });
+
+            $(".booth1").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img1").attr("src", "images/沙威馬an.png");
+                safelyPlay(audioById("s1"));
+            }, function () {
+                $(".booth-img1").attr("src", "images/沙威馬.png");
+                var audio = audioById("s1");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box1";
+            });
+
+            $(".booth2").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img2").attr("src", "images/牛奶麻薯an.png");
+                safelyPlay(audioById("s2"));
+            }, function () {
+                $(".booth-img2").attr("src", "images/牛奶麻薯.png");
+                var audio = audioById("s2");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box2";
+            });
+
+            $(".booth3").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img3").attr("src", "images/修眉挽臉an.png");
+                safelyPlay(audioById("s3"));
+            }, function () {
+                $(".booth-img3").attr("src", "images/修眉挽臉.png");
+                var audio = audioById("s3");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box8";
+            });
+
+            $(".booth5").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img5").attr("src", "images/燒肉粽an.png");
+                safelyPlay(audioById("s4"));
+            }, function () {
+                $(".booth-img5").attr("src", "images/燒肉粽.png");
+                var audio = audioById("s4");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box5";
+            });
+
+            $(".booth6").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img6").attr("src", "images/麥芽糖an.png");
+                safelyPlay(audioById("s5"));
+            }, function () {
+                $(".booth-img6").attr("src", "images/麥芽糖.png");
+                var audio = audioById("s5");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box4";
+            });
+
+            $(".booth7").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img7").attr("src", "images/豬肉攤an.png");
+                safelyPlay(audioById("s6"));
+            }, function () {
+                $(".booth-img7").attr("src", "images/豬肉攤.png");
+                var audio = audioById("s6");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box6";
+            });
+
+            $(".booth8").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img8").attr("src", "images/雞蛋糕an.png");
+                safelyPlay(audioById("s7"));
+            }, function () {
+                $(".booth-img8").attr("src", "images/雞蛋糕.png");
+                var audio = audioById("s7");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box3";
+            });
+
+            $(".booth9").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img9").attr("src", "images/麵包車an.png");
+                safelyPlay(audioById("s8"));
+            }, function () {
+                $(".booth-img9").attr("src", "images/麵包車.png");
+                var audio = audioById("s8");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box6";
+            });
+
+            $(".booth10").off("mouseenter mouseleave").hover(function () {
+                $(".booth-img10").attr("src", "images/遊戲攤an.png");
+                safelyPlay(audioById("s9"));
+            }, function () {
+                $(".booth-img10").attr("src", "images/遊戲攤.png");
+                var audio = audioById("s9");
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }).off("click").click(function () {
+                location.href = "booth.html#box6";
+            });
+        })();
+
+
+    </script>
+</body>
+
+</html>

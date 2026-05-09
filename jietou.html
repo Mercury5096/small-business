@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>街頭採訪</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 1000px;
+            margin: auto;
+            position: relative;
+
+        }
+
+        .bg {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -999;
+        }
+
+        .menu-box {
+            width: 97%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: flex-end;
+            top: 30px;
+
+        }
+
+        .logo {
+            width: 25%;
+            left: 50px;
+            align-items: center;
+            position: relative;
+
+        }
+
+        .logo img {
+            width: 80%;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            z-index: -5;
+
+        }
+
+        .menu-bar {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-bar img {
+            width: 80%;
+        }
+
+        .menu-barb {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-barb img {
+            width: 70%;
+        }
+
+        .yt {
+            width: 450px;
+            height: 250px;
+            top: 340px;
+            left: 580px;
+            border: solid 5px wheat;
+            position: absolute;
+            z-index: 30;
+        }
+
+        .yt01 {
+            width: 460px;
+            height: 250px;
+            top: 920px;
+            left: 255px;
+            border: solid 5px wheat;
+            position: absolute;
+            z-index: 30;
+        }
+
+        @keyframes move {
+            from {
+                left: 110%;
+                top: 100px;
+                transform: scale(1.0);
+            }
+
+            to {
+                left: -100px;
+                top: 400px;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes move3 {
+            from {
+                left: -150px;
+
+            }
+
+            to {
+                left: 110%;
+
+            }
+        }
+
+        .bird {
+            width: 100%;
+            height: 500px;
+            top: 500px;
+            margin: auto;
+            overflow: hidden;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .birdpic {
+            left: 1500px;
+            width: 5%;
+            position: absolute;
+            animation: move 10s infinite linear;
+
+        }
+
+        .boat {
+            width: 100%;
+            height: 300px;
+            top: 350%;
+            margin: auto;
+            overflow: hidden;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .boatpic {
+            top: 40%;
+            left: 110%;
+            width: 10%;
+            position: absolute;
+            animation: move3 20s infinite linear alternate-reverse;
+        }
+
+
+        .c {
+            width: 250px;
+            height: 250px;
+            left: 80%;
+            top: 500px;
+            margin: auto;
+            position: absolute;
+            z-index: 20;
+        }
+
+        .c1 {
+            width: 250px;
+            height: 250px;
+            left: 46%;
+            top: 1250px;
+            margin: auto;
+            position: absolute;
+            z-index: 20;
+        }
+
+        .c2 {
+            width: 250px;
+            height: 250px;
+            left: 19%;
+            top: 1700px;
+            margin: auto;
+            position: absolute;
+            z-index: 20;
+        }
+
+        .wave {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 200px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave1 {
+            width: 150px;
+            height: 100px;
+            left: 5%;
+            top: 300px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .waveA {
+            width: 150px;
+            height: 100px;
+            left: 3%;
+            top: 450px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .waveB {
+            width: 150px;
+            height: 100px;
+            left: 45%;
+            top: 750px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave2 {
+            width: 150px;
+            height: 100px;
+            left: 50%;
+            top: 2750px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave3 {
+            width: 150px;
+            height: 100px;
+            left: 80%;
+            top: 2650px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave4 {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 2700px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+        .wave5 {
+            width: 150px;
+            height: 100px;
+            left: 20%;
+            top: 2050px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave6 {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 2150px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave7 {
+            width: 150px;
+            height: 100px;
+            left: 5%;
+            top: 1950px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave8 {
+            width: 150px;
+            height: 100px;
+            left: 85%;
+            top: 1950px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+        .wave9 {
+            width: 150px;
+            height: 100px;
+            left: 80%;
+            top: 2150px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave10 {
+            width: 150px;
+            height: 100px;
+            left: 90%;
+            top: 1850px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .wave11 {
+            width: 150px;
+            height: 100px;
+            left: 60%;
+            top: 1950px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+        .jq-goTop {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 95%;
+            top: 100px;
+            z-index: 10;
+
+        }
+
+
+        .jq-goTop-img {
+            width: 100%;
+        }
+
+        #audio-01 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 96.5%;
+            top: 30px;
+            z-index: 30;
+
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <a id="audio-01"><img src="images/聲音按鈕-01.png" style=" width: 50%;" id="music_btn"></a>
+    <audio id="music" src="sound/Index_Music091622.mp3" loop></audio>
+
+    <div class="wave">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave1">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave2">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave3">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave4">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave5">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave6">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave7">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 30%;">
+    </div>
+
+    <div class="wave8">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="wave9">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="wave10">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 30%;">
+    </div>
+
+    <div class="wave11">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    <div class="waveA">
+        <img src="images/無字Apng/A浪an.png" alt=""style="width: 40%;">
+    </div>
+
+    <div class="waveB">
+        <img src="images/無字Apng/B浪an.png" alt=""style="width: 60%;">
+    </div>
+
+    
+
+    
+
+
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <div class="c">
+        <img class="cpic" src="images/無字Apng/沙威馬jan.png" alt=""style="width: 100%;">
+    </div>
+
+    <div class="c1">
+        <img class="c1pic" src="images/無字Apng/理髮師jan.png" alt=""style="width: 115%;">
+    </div>
+
+    <div class="c2">
+        <img class="c1pic" src="images/無字Apng/麵包車jan.png" alt=""style="width: 140%;">
+    </div>
+
+    <div class="bird">
+        <img class="birdpic" src="images/鳥an.png" alt="">
+    </div>
+
+    <div class="boat">
+        <img class="boatpic" src="images/boat.png" alt="">
+    </div>
+
+    <div class="yt"> <iframe width="450" height="250" src="https://www.youtube.com/embed/D4RJV1sL-jo" title="預告片"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></div>
+
+    <div class="yt01"> <iframe width="460" height="250" src="https://www.youtube.com/embed/eUW6LCSoMn0" title="民眾採訪"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe></div>
+
+    <div class="jq-goTop">
+        <img class="jq-goTop-img" src="images/side button2.png" alt="">
+    </div>
+
+    <div class="banner">
+        <img class="bg" src="images/街頭采訪.jpg" alt="">
+
+        <div class="menu-box">
+            <div class="menu-barb"> <a href="index.html" target="_blank"> <img src="images/首頁.png" alt=""></a></div>
+            <div class="menu-barb"><a href="qiyuan.html" target="_blank"> <img src="images/起源.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="#"> <img src="images/街頭.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="aboutus.html" target="_blank"> <img src="images/關於我們.png" alt=""></a></div>
+
+        </div>
+
+
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="dist/jquery.jSlider.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+        $(".jq-goTop").click(function (e) {
+            e.preventDefault();
+            $("html,body").animate(
+                {
+                    scrollTop: 0,
+                },
+                600
+            );
+        });
+
+        $("#audio-01").click(function () {
+            var music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+                $("#music_btn").attr("src", "images/聲音按鈕-02.png");
+            } else {
+                music.pause();
+                $("#music_btn").attr("src", "images/聲音按鈕-01.png");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

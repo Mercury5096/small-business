@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攤位</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <!--CSS RESET-->
+    <link rel="stylesheet" href="dist/jSlider.min.css">
+    <style type="text/css">
+        ul {
+            margin-bottom: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all .325s;
+        }
+
+        a:hover {
+            color: #000;
+
+        }
+
+        /*沙威馬*/
+        .top1 {
+            width: 360px;
+            padding: 75px 0;
+            left: 510px;
+            top: 300px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*牛奶麻薯*/
+        .top2 {
+            width: 360px;
+            padding: 75px 0;
+            left: 950px;
+            top: 640px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*雞蛋糕*/
+        .top3 {
+            width: 360px;
+            padding: 75px 0;
+            left: 240px;
+            top: 940px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*麥芽糖*/
+        .top4 {
+            width: 360px;
+            padding: 75px 0;
+            left: 945px;
+            top: 1210px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+        /*麵包車*/
+        .top5 {
+            width: 360px;
+            padding: 75px 0;
+            left: 240px;
+            top: 2790px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*豬肉攤*/
+        .top6 {
+            width: 360px;
+            padding: 75px 0;
+            left: 930px;
+            top: 1860px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*燒肉粽*/
+        .top7 {
+            width: 360px;
+            padding: 75px 0;
+            left: 240px;
+            top: 1530px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*挽臉*/
+        .top8 {
+            width: 360px;
+            padding: 75px 0;
+            left: 930px;
+            top: 2460px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /*遊戲攤*/
+        .top9 {
+            width: 360px;
+            padding: 75px 0;
+            left: 240px;
+            top: 2170px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+
+
+        @media (max-width: 713px) {
+            .top {
+                width: 500px;
+                padding-top: 0;
+                margin: 0;
+            }
+
+            .content {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <style type="text/css">
+        #slider1 {
+            width: 80%;
+            height: 200px;
+            margin: 0 auto;
+            border: 7px solid rgb(252, 249, 249);
+            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+
+        /* responsive rules */
+        @media (max-width: 713px) {
+            #slider1 {
+                width: 100%;
+                height: auto;
+                /* reset slider height to automatically fix with the first image height. */
+                border: none;
+                margin-top: 0;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+            }
+        }
+
+        #audio-01 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 96.5%;
+            top: 30px;
+            z-index: 10;
+
+        }
+    </style>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 1000px;
+            margin: auto;
+            position: relative;
+
+        }
+
+        .bg {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -999;
+        }
+
+        .menu-box {
+            width: 97%;
+            top: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: flex-end;
+
+        }
+
+        .logo {
+            width: 25%;
+            left: 50px;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo img {
+            width: 80%;
+            position: absolute;
+            top: 0;
+            left: 0%;
+            z-index: -888;
+        }
+
+        .menu-bar {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-bar img {
+            width: 80%;
+        }
+
+        .menu-barb {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-barb img {
+            width: 70%;
+        }
+
+
+        .button1 {
+            width: 230px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            left: 95%;
+            top: 200px;
+            z-index: 10;
+            transform: translate(0px, 0px);
+        }
+
+        .button1:hover {
+            transform: translate(-120px, 0px);
+            transition: all 0.5s linear;
+        }
+
+        .button-img1 {
+            width: 90%;
+        }
+
+        .button1 #k1 {
+            background: url("images/Sbt/SBT-01.png");
+            position: absolute;
+            top: 140px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k1 img {
+            width: 100%;
+        }
+
+        .button1 #k1:hover {
+            background: url("images/Sbt/SBT-01-h.png");
+        }
+
+        .button1 #k2 {
+            background: url("images/Sbt/SBT-10.png");
+            position: absolute;
+            top: 180px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k2 img {
+            width: 100%;
+        }
+
+        .button1 #k2:hover {
+            background: url("images/Sbt/SBT-10-h.png");
+        }
+
+        .button1 #k3 {
+            background: url("images/Sbt/SBT-05.png");
+            position: absolute;
+            top: 225px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k3 img {
+            width: 100%
+        }
+
+        .button1 #k3:hover {
+            background: url("images/Sbt/SBT-05-h.png");
+        }
+
+        .button1 #k5 {
+            background: url("images/Sbt/SBT-06.png");
+            position: absolute;
+            top: 265px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k5 img {
+            width: 100%
+        }
+
+        .button1 #k5:hover {
+            background: url("images/Sbt/SBT-06-h.png");
+        }
+
+        .button1 #k6 {
+            background: url("images/Sbt/SBT-02.png");
+            position: absolute;
+            top: 305px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k6 img {
+            width: 100%
+        }
+
+        .button1 #k6:hover {
+            background: url("images/Sbt/SBT-02-h.png");
+        }
+
+        .button1 #k7 {
+            background: url("images/Sbt/SBT-03.png");
+            position: absolute;
+            top: 348px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k7 img {
+            width: 100%
+        }
+
+        .button1 #k7:hover {
+            background: url("images/Sbt/SBT-03-h.png");
+        }
+
+        .button1 #k8 {
+            background: url("images/Sbt/SBT-04.png");
+            position: absolute;
+            top: 390px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k8 img {
+            width: 100%
+        }
+
+        .button1 #k8:hover {
+            background: url("images/Sbt/SBT-04-h.png");
+        }
+
+        .button1 #k9 {
+            background: url("images/Sbt/SBT-09.png");
+            position: absolute;
+            top: 430px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+        }
+
+        .button1 #k9 img {
+            width: 100%
+        }
+
+        .button1 #k9:hover {
+            background: url("images/Sbt/SBT-09-h.png");
+        }
+
+        .button1 #k10 {
+            background: url("images/Sbt/SBT-07.png");
+            position: absolute;
+            top: 470px;
+            left: 45px;
+            width: 115px;
+            height: 40px;
+
+        }
+
+        .button1 #k10 img {
+            width: 100%;
+        }
+
+        .button1 #k10:hover {
+            background: url("images/Sbt/SBT-07-h.png");
+        }
+
+        #box1 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+        }
+
+        #box2 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 450px;
+        }
+
+        #box3 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 750px;
+        }
+
+        #box4 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1000px;
+        }
+
+        #box5 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1300px;
+        }
+
+        #box6 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1700px;
+        }
+
+        #box7 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 1900px;
+        }
+
+        #box8 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 2200px;
+        }
+
+        #box9 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 2800px;
+        }
+
+        #box10 {
+            width: 5%;
+            height: 30px;
+            position: absolute;
+            top: 3000px;
+        }
+
+        /*影片相關設定*/
+        /*遊戲攤影片*/
+        #booth01 {
+            width: 12%;
+            top: 51%;
+            left: 56%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            color: red;
+            padding: 10px;
+            opacity: 0.6;
+
+        }
+
+        #booth01:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth01-movie {
+            width: 50%;
+            height: 50%;
+            top: 35%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth01-movie #v {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth01-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth01-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*牛奶麻薯影片*/
+        #booth02 {
+            width: 12%;
+            top: 98%;
+            left: 53%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth02:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth02-movie {
+            width: 50%;
+            height: 50%;
+            top: 85%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth02-movie #v2 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth02-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth02-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*雞蛋糕影片*/
+        #booth03 {
+            width: 12%;
+            top: 137%;
+            left: 38%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth03:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth03-movie {
+            width: 50%;
+            height: 50%;
+            top: 125%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth03-movie #v3 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth03-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth03-movie #close:hover {
+            color:burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*麥芽糖影片*/
+        #booth04 {
+            width: 12%;
+            top: 177%;
+            left: 53%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth04:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth04-movie {
+            width: 50%;
+            height: 50%;
+            top: 165%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth04-movie #v4 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth04-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth04-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*豬肉攤影片*/
+        #booth05 {
+            width: 12%;
+            top: 262%;
+            left: 53%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth05:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth05-movie {
+            width: 50%;
+            height: 50%;
+            top: 260%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth05-movie #v5 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth05-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth05-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*遊戲攤影片*/
+        #booth06 {
+            width: 12%;
+            top: 302%;
+            left: 38%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth06:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth06-movie {
+            width: 50%;
+            height: 50%;
+            top: 306%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth06-movie #v6 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth06-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth06-movie #close:hover {
+            color:burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*麵包車影片*/
+        #booth07 {
+            width: 12%;
+            top: 387%;
+            left: 38%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth07:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth07-movie {
+            width: 50%;
+            height: 50%;
+            top: 391%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth07-movie #v7 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth07-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth07-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*燒肉粽影片*/
+        #booth08 {
+            width: 12%;
+            top: 220%;
+            left: 38%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth08:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #booth08-movie {
+            width: 50%;
+            height: 50%;
+            top: 220%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth08-movie #v8 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth08-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth08-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        /*挽臉影片*/
+        #booth09 {
+            width: 15%;
+            top: 345%;
+            left: 53%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            opacity: 0.6;
+        }
+
+        #booth09:hover {
+            opacity: 1;
+            cursor: pointer;
+        
+        }
+
+        #booth09-movie {
+            width: 50%;
+            height: 50%;
+            top: 350%;
+            left: 20%;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            position: absolute;
+            z-index: 30;
+            display: none;
+        }
+
+        #booth09-movie #v9 {
+            width: 97%;
+            height: 95%;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        #booth09-movie #close {
+            color: rgb(247, 240, 240);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        #booth09-movie #close:hover {
+            color: burlywood;
+            text-decoration: none;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            z-index: 2;
+        }
+
+        .e {
+            width: 480px;
+            height: 270px;
+            background-color: aliceblue;
+        }
+
+        .c {
+            width: 150px;
+            height: 100px;
+            left: 10%;
+            top: 200px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .c1 {
+            width: 150px;
+            height: 100px;
+            left: 3%;
+            top: 300px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .c5 {
+            width: 150px;
+            height: 80px;
+            left: 90%;
+            top: 2380px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .c8 {
+            width: 150px;
+            height: 80px;
+            left: 15%;
+            top: 380px;
+            margin: auto;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .jq-goTop {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 95%;
+            top: 100px;
+            z-index: 10;
+
+        }
+
+        .jq-goTop-img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <a id="audio-01"><img src="images/聲音按鈕-01.png" style=" width: 50%;" id="music_btn"></a>
+    <audio id="music" src="sound/Index_Music091622.mp3" loop></audio>
+
+    <div class="c">
+        <img src="images/無字Apng/A浪an.png" alt="" style="width: 60%;">
+    </div>
+
+    <div class="c1">
+        <img src="images/無字Apng/B浪an.png" alt="" style="width: 50%;">
+    </div>
+
+    <div class="c5">
+        <img src="images/無字Apng/B浪an.png" alt="" style="width: 40%;">
+    </div>
+
+    <div class="c8">
+        <img src="images/無字Apng/A浪an.png" alt="" style="width: 30%;">
+    </div>
+
+    <!--影片播放內容-->
+    <div id="booth01">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth01-movie">
+        <span id="close">&times;</span>
+        <div id="v"></div>
+    </div>
+
+    <div id="booth02">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth02-movie">
+        <span id="close">&times;</span>
+        <div id="v2"></div>
+    </div>
+
+    <div id="booth03">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth03-movie">
+        <span id="close">&times;</span>
+        <div id="v3"></div>
+    </div>
+
+    <div id="booth04">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth04-movie">
+        <span id="close">&times;</span>
+        <div id="v4"></div>
+    </div>
+
+    <div id="booth05">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth05-movie">
+        <span id="close">&times;</span>
+        <div id="v5"></div>
+    </div>
+
+    <div id="booth06">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth06-movie">
+        <span id="close">&times;</span>
+        <div id="v6"></div>
+    </div>
+
+    <div id="booth07">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth07-movie">
+        <span id="close">&times;</span>
+        <div id="v7"></div>
+    </div>
+
+    <div id="booth08">
+        <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth08-movie">
+        <span id="close">&times;</span>
+        <div id="v8"></div>
+    </div>
+
+    <div id="booth09">
+            <div><img src="images/採訪影片按鈕.png"></div>
+    </div>
+    <div id="booth09-movie">
+        <span id="close">&times;</span>
+        <div id="v9"></div>
+    </div>
+
+
+    <!--影片播放內容-->
+
+    <!--照片輪播-->
+
+    <div class="htmleaf-container">
+        <div class="top1">
+            <div class="jSlider" id="slider1">
+                <div><img src="images/攤位照片/SWM01.jpg"></div>
+                <div><img src="images/攤位照片/SWM02.jpg"></div>
+                <div><img src="images/攤位照片/SWM03.jpg"></div>
+                <div><img src="images/攤位照片/SWM04.jpg"></div>
+                <div><img src="images/攤位照片/SWM05.jpg"></div>
+                <div><img src="images/攤位照片/SWM06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top2">
+            <div class="jSlider" data-delay="6000" id="slider1">
+                <div><img src="images/攤位照片/NNMS01.jpg"></div>
+                <div><img src="images/攤位照片/NNMS02.jpg"></div>
+                <div><img src="images/攤位照片/NNMS03.jpg"></div>
+                <div><img src="images/攤位照片/NNMS04.jpg"></div>
+                <div><img src="images/攤位照片/NNMS05.jpg"></div>
+                <div><img src="images/攤位照片/NNMS06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top3">
+            <div class="jSlider" data-delay="7000" id="slider1">
+                <div><img src="images/攤位照片/JDG01.jpg"></div>
+                <div><img src="images/攤位照片/JDG02.jpg"></div>
+                <div><img src="images/攤位照片/JDG03.jpg"></div>
+                <div><img src="images/攤位照片/JDG04.jpg"></div>
+                <div><img src="images/攤位照片/JDG05.jpg"></div>
+                <div><img src="images/攤位照片/JDG06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top4">
+            <div class="jSlider" data-delay="8000" id="slider1">
+                <div><img src="images/攤位照片/MYT01.jpg"></div>
+                <div><img src="images/攤位照片/MYT02.jpg"></div>
+                <div><img src="images/攤位照片/MYT03.jpg"></div>
+                <div><img src="images/攤位照片/MYT04.jpg"></div>
+                <div><img src="images/攤位照片/MYT05.jpg"></div>
+                <div><img src="images/攤位照片/MYT06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top5">
+            <div class="jSlider" data-delay="6000" id="slider1">
+                <div><img src="images/攤位照片/MBC01.jpg"></div>
+                <div><img src="images/攤位照片/MBC02.jpg"></div>
+                <div><img src="images/攤位照片/MBC03.jpg"></div>
+                <div><img src="images/攤位照片/MBC04.jpg"></div>
+                <div><img src="images/攤位照片/MBC05.jpg"></div>
+                <div><img src="images/攤位照片/MBC06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top6">
+            <div class="jSlider" data-delay="7000" id="slider1">
+                <div><img src="images/攤位照片/ZRT01.jpg"></div>
+                <div><img src="images/攤位照片/ZRT02.jpg"></div>
+                <div><img src="images/攤位照片/ZRT03.jpg"></div>
+                <div><img src="images/攤位照片/ZRT04.jpg"></div>
+                <div><img src="images/攤位照片/ZRT01.jpg"></div>
+                <div><img src="images/攤位照片/ZRT03.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top7">
+            <div class="jSlider" data-delay="6000" id="slider1">
+                <div><img src="images/攤位照片/SRZ01.jpg"></div>
+                <div><img src="images/攤位照片/SRZ02.jpg"></div>
+                <div><img src="images/攤位照片/SRZ03.jpg"></div>
+                <div><img src="images/攤位照片/SRZ04.jpg"></div>
+                <div><img src="images/攤位照片/SRZ05.jpg"></div>
+                <div><img src="images/攤位照片/SRZ06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top8">
+            <div class="jSlider" data-delay="6000" id="slider1">
+                <div><img src="images/攤位照片/WL01.jpg"></div>
+                <div><img src="images/攤位照片/WL02.jpg"></div>
+                <div><img src="images/攤位照片/WL03.jpg"></div>
+                <div><img src="images/攤位照片/WL04.jpg"></div>
+                <div><img src="images/攤位照片/WL05.jpg"></div>
+                <div><img src="images/攤位照片/WL06.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="htmleaf-container">
+        <div class="top9">
+            <div class="jSlider" data-delay="6000" id="slider1">
+                <div><img src="images/攤位照片/YXT01.jpg"></div>
+                <div><img src="images/攤位照片/YXT02.jpg"></div>
+                <div><img src="images/攤位照片/YXT03.jpg"></div>
+                <div><img src="images/攤位照片/YXT04.jpg"></div>
+                <div><img src="images/攤位照片/YXT01.jpg"></div>
+                <div><img src="images/攤位照片/YXT03.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--照片輪播-->
+
+
+
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+
+    <div class="button1">
+        <img class="button-img1" src="images/side buttonBG.png" alt="">
+
+        <a href="#box1">
+            <div id="k1"><img src="" alt=""></div>
+        </a>
+        <a href="#box2">
+            <div id="k2"><img src="" alt=""></div>
+        </a>
+        <a href="#box8">
+            <div id="k3"><img src="" alt=""></div>
+        </a>
+        <a href="#box7">
+            <div id="k4"><img src="" alt=""></div>
+        </a>
+        <a href="#box5">
+            <div id="k5"><img src="" alt=""></div>
+        </a>
+        <a href="#box4">
+            <div id="k6"><img src="" alt=""></div>
+        </a>
+        <a href="#box6">
+            <div id="k7"><img src="" alt=""></div>
+        </a>
+        <a href="#box3">
+            <div id="k8"><img src="" alt=""></div>
+        </a>
+        <a href="#box9">
+            <div id="k9"><img src="" alt=""></div>
+        </a>
+        <a href="#box7">
+            <div id="k10"><img src="" alt=""></div>
+        </a>
+
+    </div>
+
+    <div class="jq-goTop">
+        <img class="jq-goTop-img" src="images/side button2.png" alt="">
+    </div>
+
+    <!--空物件-->
+
+    <div id="box1">
+        <p></p>
+    </div>
+
+    <div id="box2">
+        <p></p>
+    </div>
+
+    <div id="box3">
+        <p></p>
+    </div>
+
+    <div id="box4">
+        <p></p>
+    </div>
+
+    <div id="box5">
+        <p></p>
+    </div>
+
+    <div id="box6">
+        <p></p>
+    </div>
+
+    <div id="box7">
+        <p></p>
+    </div>
+
+    <div id="box8">
+        <p></p>
+    </div>
+
+    <div id="box9">
+        <p></p>
+    </div>
+
+    <div id="box10">
+        <p></p>
+    </div>
+
+
+    <!--空物件-->
+
+    <div class="banner">
+        <img class="bg" src="images/檔口介紹.jpg" alt="">
+
+        <div class="menu-box">
+            <div class="menu-barb"> <a href="index.html" target="_blank"> <img src="images/首頁.png" alt=""></a></div>
+            <div class="menu-barb"><a href="qiyuan.html" target="_blank"> <img src="images/起源.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="jietou.html" target="_blank"> <img src="images/街頭.png" alt=""></a></div>
+            <div class="menu-bar"> <a href="aboutus.html" target="_blank"> <img src="images/關於我們.png" alt=""></a></div>
+
+        </div>
+    </div>
+
+
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="dist/jquery.jSlider.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+
+        $(".jq-goTop").click(function (e) {
+            e.preventDefault();
+            $("html,body").animate(
+                {
+                    scrollTop: 0,
+                },
+                600
+            );
+        });
+
+        $("#audio-01").click(function () {
+            var music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+                $("#music_btn").attr("src", "images/聲音按鈕-02.png");
+            } else {
+                music.pause();
+                $("#music_btn").attr("src", "images/聲音按鈕-01.png");
+            }
+        });
+
+
+        var v_player1, vplayer2, vplayer3, v_player4, v_player5, v_player6, v_player7, v_player8;
+        function onYouTubeIframeAPIReady() {
+            v_player1 = new YT.Player('v', {
+                //height: "270",
+                //width: "480",
+                //沙威馬
+                videoId: '3k3BOlbQJgM',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            }),
+
+                v_player2 = new YT.Player('v2', {
+                    //height: "270",
+                    //width: "480",
+                    //牛奶麻煩
+                    videoId: 'x2E-wQKb480',
+                    playerVars: {
+                        'playsinline': 1,
+                        'autoplay': 0,
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                    }
+                })
+
+            v_player3 = new YT.Player('v3', {
+                //height: "270",
+                //width: "480",
+                videoId: 'vCeIx7zhweQ',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player4 = new YT.Player('v4', {
+                //height: "270",
+                //width: "480",
+                videoId: '1bpyGXcppYI',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player5 = new YT.Player('v5', {
+                //height: "270",
+                //width: "480",
+                videoId: 'CXiCKAn-Hvg',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player6 = new YT.Player('v6', {
+                //height: "270",
+                //width: "480",
+                //遊戲攤
+                videoId: 'b7Nw9jw_dqE',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player7 = new YT.Player('v7', {
+                //height: "270",
+                //width: "480",
+                //麵包車
+                videoId: 'kKAbzbA8RX0',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player8 = new YT.Player('v8', {
+                //height: "270",
+                //width: "480",
+                //燒肉粽
+                videoId: 'KUwZRgiIhwQ',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+
+            v_player9 = new YT.Player('v9', {
+                //height: "270",
+                //width: "480",
+                //挽臉
+                videoId: 'qJbEzLee00s',
+                playerVars: {
+                    'playsinline': 1,
+                    'autoplay': 0,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            })
+        }
+
+        function onPlayerReady(event) {
+            //event.target.playVideo();
+        }
+
+        $("#booth01").click(function () {
+            $("#booth01-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth01-movie #close").click(function () {
+            $("#booth01-movie").css("display", "none");
+            v_player1.stopVideo();
+        })
+
+        $("#booth02").click(function () {
+            $("#booth02-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth02-movie #close").click(function () {
+            $("#booth02-movie").css("display", "none");
+            v_player2.stopVideo();
+        })
+
+        $("#booth03").click(function () {
+            $("#booth03-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth03-movie #close").click(function () {
+            $("#booth03-movie").css("display", "none");
+            v_player3.stopVideo();
+        })
+
+        $("#booth04").click(function () {
+            $("#booth04-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth04-movie #close").click(function () {
+            $("#booth04-movie").css("display", "none");
+            v_player4.stopVideo();
+        })
+
+        $("#booth05").click(function () {
+            $("#booth05-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth05-movie #close").click(function () {
+            $("#booth05-movie").css("display", "none");
+            v_player5.stopVideo();
+        })
+
+        $("#booth06").click(function () {
+            $("#booth06-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth06-movie #close").click(function () {
+            $("#booth06-movie").css("display", "none");
+            v_player6.stopVideo();
+        })
+
+        $("#booth07").click(function () {
+            $("#booth07-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth07-movie #close").click(function () {
+            $("#booth07-movie").css("display", "none");
+            v_player7.stopVideo();
+        })
+
+        $("#booth08").click(function () {
+            $("#booth08-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth08-movie #close").click(function () {
+            $("#booth08-movie").css("display", "none");
+            v_player8.stopVideo();
+        })
+
+        $("#booth09").click(function () {
+            $("#booth09-movie").css("display", "block");
+            //加入以下程式，點擊後會開始播放
+            //v_player.playVideo();
+        })
+        $("#booth09-movie #close").click(function () {
+            $("#booth09-movie").css("display", "none");
+            v_player9.stopVideo();
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

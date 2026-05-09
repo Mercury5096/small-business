@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #popWindow {
+            width: 1920px;
+            height: 1080px;
+            left: 0%;
+            top: 0%;
+            border: 2px red solid;
+            border-radius: 20px;
+            position: fixed;
+            z-index: 20;
+        }
+
+        #pop-img1 {
+            width: 80%;
+        }
+
+        #play-again {
+            position: absolute;
+            left: 32%;
+            top: 300px;
+            font-size: 24px;
+            z-index: 30;
+        }
+
+        #play-end {
+            position: absolute;
+            left: 42%;
+            top: 300px;
+            font-size: 24px;
+            z-index: 30;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            position: relative;
+
+        }
+
+        .bg {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -999;
+        }
+
+        .logo {
+            width: 15%;
+            align-items: center;
+            position: absolute;
+
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        #booth1 {
+            width: 75px;
+            height: 75px;
+            top: 4%;
+            left: 85%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img1 {
+            width: 75%;
+            border: solid red;
+        }
+
+        #booth2 {
+            width: 57px;
+            height: 57px;
+            top: 38%;
+            left: 71%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img2 {
+            width: 80%;
+            border: solid red;
+        }
+
+        #booth3 {
+            width: 72px;
+            height: 72px;
+            top: 43.4%;
+            left: 84.5%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img3 {
+            width: 80%;
+            border: solid red;
+        }
+
+        #booth4 {
+            width: 72px;
+            height: 72px;
+            top: 63%;
+            left: 91%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img4 {
+            width: 80%;
+            border: solid red;
+        }
+
+        #booth5 {
+            width: 54px;
+            height: 84px;
+            top: 73.8%;
+            left: 88.15%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img5 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #booth6 {
+            width: 45px;
+            height: 45px;
+            top: 89%;
+            left: 89.3%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img6 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #booth7 {
+            width: 61px;
+            height: 44px;
+            top: 90%;
+            left: 54%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img7 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #booth8 {
+            width: 44px;
+            height: 54px;
+            top: 90%;
+            left: 58.5%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img8 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #booth9 {
+            width: 112px;
+            height: 42px;
+            top: 30%;
+            left: 83.5%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img9 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #booth10 {
+            width: 46px;
+            height: 85px;
+            top: 34%;
+            left: 95%;
+            align-items: center;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #booth-img10 {
+            width: 78.5%;
+            border: solid red;
+        }
+
+        #time {
+            width: 200px;
+            height: 50px;
+            left: 43%;
+            border: solid 3px beige;
+            background-color: aliceblue;
+            position: absolute;
+            text-align: center;
+        }
+
+        #audio-01 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 58%;
+            top: -25px;
+            z-index: 10;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <a id="audio-01"><img src="images/聲音按鈕-01.png" style=" width: 50%;" id="music_btn"></a>
+    <audio id="music" src="sound/Index_Music091622.mp3" loop></audio>
+
+
+    <!-- <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div> -->
+
+    <div class="banner">
+        <img class="bg" src="images/game/game.jpg" alt="">
+
+        <div id="time">
+            <div><span id="min">0</span> 分 <span id="sec">0</span> 秒</div>
+            <div id="objCount">還有 : <span id="objLeft">10</span> 個物件還沒找出來</div>
+        </div>
+
+        <div id="popWindow">
+            <img id="pop-img1" src="images/game/游戲結束.png">
+            <button id="play-again">再玩一次</button>
+            <button id="play-end">回到首頁</button>
+        </div>
+
+
+        <div id="booth1"> <img id="booth-img1" src="images/game/game-02.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth2"> <img id="booth-img2" src="images/game/game-05.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth3"> <img id="booth-img3" src="images/game/game-06.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth4"> <img id="booth-img4" src="images/game/game-07.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth5"> <img id="booth-img5" src="images/game/game-08.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth6"> <img id="booth-img6" src="images/game/game-09.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth7"> <img id="booth-img7" src="images/game/game-01.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth8"> <img id="booth-img8" src="images/game/game-10.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth9"> <img id="booth-img9" src="images/game/game-03.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+
+        <div id="booth10"> <img id="booth-img10" src="images/game/game-04.png" alt="">
+            <audio id="s1" src="sound/correct.mp3"></audio></a>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#booth-img10").hide();
+            $("#booth10").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img10").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img9").hide();
+            $("#booth9").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img9").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img8").hide();
+            $("#booth8").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img8").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img7").hide();
+            $("#booth7").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img7").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img6").hide();
+            $("#booth6").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img6").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img5").hide();
+            $("#booth5").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img5").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img4").hide();
+            $("#booth4").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img4").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img3").hide();
+            $("#booth3").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img3").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img2").hide();
+            $("#booth2").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img2").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+        $(function () {
+            $("#booth-img1").hide();
+            $("#booth1").click(function () {
+                $("#s1")[0].play(-4000);
+                $("#booth-img1").show();
+                totalObject--;
+                $("#objLeft").html(totalObject);
+                if (totalObject <=0) location.href="game1.html";
+            });
+        });
+
+
+        $(function () {
+            $("#popWindow").hide();
+        });
+
+
+        var min = document.getElementById("min");
+        var sec = document.getElementById("sec");
+        var total = 90; //設定倒數90秒
+        var totalObject = 10;
+        var m = parseInt(total / 60);
+        var s = total - m * 60;
+        min.innerHTML = m;
+        sec.innerHTML = s;
+        var t = setInterval("countDown()", 1000);
+        function countDown() {
+            total--;
+            var m = parseInt(total / 60);
+            var s = total - m * 60;
+            min.innerHTML = m;
+            sec.innerHTML = s;
+            if (total < 10) { //進入倒數10秒
+                //倒數10秒要做的事寫在這裡
+                $("#objCount").css("color", "red");
+                if (total <= 0) { //時間到
+                    clearInterval(t);
+                    $("#popWindow").show();
+                    //在這裡加入時間結束後要做的事
+                }
+            }
+        }
+
+       
+
+        $(function () {
+            $("#play-again").click(function () {
+                //$("#popWindow").hide();
+                //total = 3; //設定倒數120秒
+                //t = setInterval("countDown()", 1000);
+                location.href = "game.html";
+            })
+            $("#play-end").click(function () {
+                //$("#popWindow").hide();
+                location.href = "index.html";
+            })
+        })
+
+        $("#audio-01").click(function () {
+            var music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+                $("#music_btn").attr("src", "images/聲音按鈕-02.png");
+            } else {
+                music.pause();
+                $("#music_btn").attr("src", "images/聲音按鈕-01.png");
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

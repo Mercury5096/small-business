@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    #popWindow {
+        width: 100%;
+        height: 95%;
+        z-index: 20;
+    }
+
+    #play-again {
+        position: absolute;
+        left: 40%;
+        top: 360px;
+        font-size: 24px;
+        z-index: 30;
+    }
+
+    #play-end {
+        position: absolute;
+        left: 52%;
+        top: 360px;
+        font-size: 24px;
+        z-index: 30;
+    }
+
+    .banner {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        left: 0%;
+        top: 0%;
+        position: fixed;
+
+    }
+
+    .bg {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -999;
+    }
+</style>
+
+<body>
+
+    <div class="banner">
+        <img class="bg" src="images/game/挑戰成功.jpg" alt="">
+
+        <div id="popWindow">
+            <button id="play-again">再玩一次</button>
+            <button id="play-end">回到首頁</button>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#play-again").click(function () {
+                //$("#popWindow").hide();
+                //total = 3; //設定倒數120秒
+                //t = setInterval("countDown()", 1000);
+                location.href = "game.html";
+            })
+            $("#play-end").click(function () {
+                //$("#popWindow").hide();
+                location.href = "index.html";
+            })
+        })
+    </script>
+
+</body>
+
+</html>
